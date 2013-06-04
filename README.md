@@ -1,7 +1,8 @@
 iScaleBar
 =========
 本套件是搭配達康地圖 ( http://api.map.com.tw ) <br>
-所自訂的地圖控制項
+所自訂的地圖控制項<br>
+<img src="https://github.com/justin3737/iScaleBar/blob/master/assets/iScalebar.png?raw=true">
 
 How to Use : 
 --------------
