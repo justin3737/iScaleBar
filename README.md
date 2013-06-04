@@ -6,7 +6,7 @@ iScaleBar
 How to Use : 
 --------------
 需要引入以下檔案:
-- jQuery Lib
+- jQuery Lib (最低版本 1.3 以上)
 - iScaleBar.js 
 - iScaleBar.css
 - iScaleBar.png
