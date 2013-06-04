@@ -1,35 +1,3 @@
-/***************************************	iScaleBar	************************************
-
-	html document 需要引入以下檔案:
-		jQuery Lib
-		iScaleBar.js 
-		iScaleBar.css
-		iScaleBar.png
-
-	傳遞參數說明:
-		MapCanvas: 		建立的地圖 canvas 名稱 	ex:"map_canvas".
-						iScaleBar.js 會自動建立在 <div id='map_canvas'></div> 下第一個節點
-
-		map: 			傳入達康地圖的map物件參考
-
-		imgUrl: 	iScaleBar背景圖片位置	ex:"images\iScaleBar.png"
-						需要告知圖片的路徑不然就找不到背景圖片了!
-		
-		type: 			"large" or "samll"
-						 scale 型態:大的或是小的,預設值:"large"可不傳
-
-		options = {
-			type: 			"large",
-			imgUrl: 		"iScalebar.png",
-			useMouseWheel: 	true, 
-			mouseWheelPluginUrl:"assets/jquery.mousewheel.js",
-			zoom_gap_min: 	9,
-			zoom_gap_max: 	12
-		};
-						滑鼠滾輪縮放倍率,預設值:(1~12)可不傳
-
-*******************************************************************************************/
-
 var iScaleBar = function ( MapCanvas, mapObj, options){ 
 	var bgStyle = { "background" : 'url(' + options.imgUrl + ') no-repeat'};
 	var type = ( options.type ) ? options.type : "large" ; 
@@ -144,7 +112,7 @@ var iScaleBar = function ( MapCanvas, mapObj, options){
 
     //------	addEventListener	---------------------
     if(type == "large"){
-    	_elm.iScalebar.on('click',function(evt){
+    	_elm.iScalebar.bind('click',function(evt){
     		scaleControl(evt.pageY - scaleTop);
    		});
 
@@ -159,14 +127,14 @@ var iScaleBar = function ( MapCanvas, mapObj, options){
 				return false;
 			});
    		}
-	};//end if type == "large"
+	};
 
-    _elm.zoomInBtn.on('click',function(evt){
+    _elm.zoomInBtn.bind('click',function(evt){
     	evt.stopPropagation();
     	scaleControl("in");
    	});
 
-   	_elm.zoomOutBtn.on('click',function(evt){
+   	_elm.zoomOutBtn.bind('click',function(evt){
    		evt.stopPropagation();
    		scaleControl("out");
    	});
