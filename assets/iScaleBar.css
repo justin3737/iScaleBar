@@ -1,0 +1,32 @@
+#iScalebar {
+  top: 2px;
+  left: 2px;
+  position: absolute;
+  width: 31px;
+  cursor: pointer;
+  height: 195px;
+}
+#iScalebar.small {
+  height: 58px;
+}
+#iScalebar .zoomInBtn {
+  width: 31px;
+  height: 26px;
+}
+#iScalebar .zoomOutBtn {
+  left: 0px;
+  width: 31px;
+  height: 32px;
+  position: absolute;
+  top: 163px;
+}
+#iScalebar .zoomOutBtn.small {
+  top: 26px;
+}
+#iScalebar .scaleBar {
+  top: 33px;
+  height: 11px;
+  width: 31px;
+  left: 0px;
+  position: absolute;
+}

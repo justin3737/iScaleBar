@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>載入地圖控制項</title>
+	<link rel="stylesheet" href="assets/iScaleBar.css">
+	<script type = "text/javascript" src='http://code.jquery.com/jquery-1.7.2.min.js'></script>
+	<script type = "text/javascript" src="assets/iScaleBar.js"></script>
+	<!-- 使用達康地圖API , API KEY 需要申請 -->
+	<script type="text/javascript" src="http://api.map.com.tw/js/getAPI.asp?v=1&key=DFCE9CCD255DB124825E75C2EFEAB9C10E513C09"></script>
+	<script>
+		$(function(){
+			var map;
+      		//定義Map初始位置
+      		map = new iMap (document.getElementById ("map_canvas")); 
+　　		map.centerMap (new Point (121.52,25.035) ,7 );   //設定地圖初始位置 
+			
+			//註解(移除)原有的達康地圖控制項
+			//map.addControl ('LargeScaleBar'); 
+
+
+			//iScaleBar options
+			var options = {
+				imgUrl: 	"assets/iScalebar.png",	//*reguired
+				type: 		"large",			
+				useMouseWheel: true, 
+				mouseWheelPluginUrl:"assets/jquery.mousewheel.js",
+				zoom_gap_min: 9,
+				zoom_gap_max: 12
+			};
+
+			new iScaleBar( "map_canvas", map, options);
+
+		});
+	</script>
+</head >
+<body>
+	<div id="map_canvas" style="width:750px;height:370px;"></div>
+</div>
+</body>
+</html>
