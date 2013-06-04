@@ -66,4 +66,47 @@ new iScaleBar( "map_canvas", map, options);
 
 Step 3:
 --------------
+結果如下:
 done and Enjoy it !
+<pre>
+&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+	&lt;title&gt;Demo&lt;/title&gt;
+	&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/iScaleBar.css&quot;&gt;
+	&lt;script type = &quot;text/javascript&quot; src='http://code.jquery.com/jquery-1.7.2.min.js'&gt;&lt;/script&gt;
+	&lt;script type = &quot;text/javascript&quot; src=&quot;assets/iScaleBar.js&quot;&gt;&lt;/script&gt;
+	&lt;!-- use map api &amp; key --&gt;
+	&lt;script type=&quot;text/javascript&quot; src=&quot;http://api.map.com.tw/js/getAPI.asp?v=1&amp;key=DFCE9CCD255DB124825E75C2EFEAB9C10E513C09&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		$(function(){
+			var map;
+      		map = new iMap (document.getElementById (&quot;map_canvas&quot;)); 
+		map.centerMap (new Point (121.52,25.035) ,7 );  
+			
+			//remove defaule scale controller
+			//map.addControl ('LargeScaleBar'); 
+
+			//iScaleBar options
+			var options = {
+				imgUrl: 	&quot;assets/iScalebar.png&quot;,	//*reguired
+				type: 		&quot;large&quot;,			
+				useMouseWheel: true, 
+				mouseWheelPluginUrl:&quot;assets/jquery.mousewheel.js&quot;,
+				zoom_gap_min: 9,
+				zoom_gap_max: 12
+			};
+
+			new iScaleBar( &quot;map_canvas&quot;, map, options);
+
+		});
+	&lt;/script&gt;
+&lt;/head &gt;
+&lt;body&gt;
+	&lt;div id=&quot;map_canvas&quot; style=&quot;width:750px;height:370px;&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
