@@ -15,9 +15,7 @@ How to Use :
 Step 0:
 --------------
 <pre>
-  <code>
   //this is code
-  </code>
 </pre>
 
 
