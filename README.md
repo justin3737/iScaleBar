@@ -5,6 +5,18 @@ iScaleBar
 
 How to Use : 
 --------------
+需要引入以下檔案:
+- jQuery Lib
+- iScaleBar.js 
+- iScaleBar.css
+- iScaleBar.png
+- mousewheel.js (*not required)
 
 Step 0:
+--------------
+
+Step 1:
+--------------
+
+Step 2:
 --------------
