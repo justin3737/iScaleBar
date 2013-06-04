@@ -109,7 +109,3 @@ done and Enjoy it !
 &lt;/body&gt;
 &lt;/html&gt;
 </pre>
-
-Licence : 
---------------
-永慶集團
