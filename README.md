@@ -66,7 +66,7 @@ new iScaleBar( "map_canvas", map, options);
 
 Step 3:
 --------------
-結果如下:
+結果如下:<br>
 done and Enjoy it !
 <pre>
 &lt;!doctype html&gt;
