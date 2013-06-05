@@ -1,3 +1,6 @@
+/** 
+ * Version: 0.1.0 (2013/06/05)
+ */
 var iScaleBar = function ( MapCanvas, mapObj, options){ 
 	var bgStyle = { "background" : 'url(' + options.imgUrl + ') no-repeat'};
 	var type = ( options.type ) ? options.type : "large" ; 
@@ -66,6 +69,8 @@ var iScaleBar = function ( MapCanvas, mapObj, options){
     		$('head').append(includeStr);
     	}
     	var val = getZoomVal();
+      val = (val < _data.mapZoomMin) ? _data.mapZoomMin : val;
+      val = (val > _data.mapZoomMax) ? _data.mapZoomMax : val;
     	setScalebarPos(val);
     };
 
@@ -115,19 +120,19 @@ var iScaleBar = function ( MapCanvas, mapObj, options){
     	_elm.iScalebar.bind('click',function(evt){
     		scaleControl(evt.pageY - scaleTop);
    		});
+	   };
 
-    	if(_data.useMouseWheel){
-	   		$("#" + MapCanvas).mousewheel(function (event, delta) {
-				var val = getZoomVal();
-				(delta >= 0) ? (( val  < _data.mapZoomMax ) ? val  += 1 : val ) : (( val > _data.mapZoomMin ) ? val -= 1 : val);
-				if (val >= 1 && val <= 12) { 
-					map.ZoomTo( val );
-					setScalebarPos( val ); 
-				}
-				return false;
-			});
-   		}
-	};
+    if(_data.useMouseWheel){
+        $("#" + MapCanvas).mousewheel(function (event, delta) {
+        var val = getZoomVal();
+        (delta >= 0) ? (( val  < _data.mapZoomMax ) ? val  += 1 : val ) : (( val > _data.mapZoomMin ) ? val -= 1 : val);
+        if (val >= 1 && val <= 12) { 
+          map.ZoomTo( val );
+          setScalebarPos( val ); 
+        }
+        return false;
+      });
+    };
 
     _elm.zoomInBtn.bind('click',function(evt){
     	evt.stopPropagation();
