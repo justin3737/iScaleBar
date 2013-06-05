@@ -16,6 +16,9 @@ How to Use :
 Step 0-1:
 --------------
 在<code>head</code>中引入達康地圖API & KEY 
+<pre>
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://api.map.com.tw/js/getAPI.asp?v=1&amp;key=your_key_here&quot;&gt;&lt;/script&gt;
+</pre>
 詳見: http://api.map.com.tw/
 
 Step 0-2:
@@ -79,7 +82,7 @@ done and Enjoy it !
 	&lt;script type = &quot;text/javascript&quot; src='http://code.jquery.com/jquery-1.7.2.min.js'&gt;&lt;/script&gt;
 	&lt;script type = &quot;text/javascript&quot; src=&quot;assets/iScaleBar.js&quot;&gt;&lt;/script&gt;
 	&lt;!-- use map api &amp; key --&gt;
-	&lt;script type=&quot;text/javascript&quot; src=&quot;http://api.map.com.tw/js/getAPI.asp?v=1&amp;key=DFCE9CCD255DB124825E75C2EFEAB9C10E513C09&quot;&gt;&lt;/script&gt;
+	&lt;script type=&quot;text/javascript&quot; src=&quot;http://api.map.com.tw/js/getAPI.asp?v=1&amp;key=your_key_here&quot;&gt;&lt;/script&gt;
 	&lt;script&gt;
 		$(function(){
 			var map;
