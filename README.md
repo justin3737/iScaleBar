@@ -19,6 +19,12 @@ Step 0-1:
 <pre>
 &lt;script type=&quot;text/javascript&quot; src=&quot;http://api.map.com.tw/js/getAPI.asp?v=1&amp;key=your_key_here&quot;&gt;&lt;/script&gt;
 </pre>
+引入js.css
+<pre>
+&lt;script type = &quot;text/javascript&quot; src='http://code.jquery.com/jquery-1.7.2.min.js'&gt;&lt;/script&gt;
+&lt;script type = &quot;text/javascript&quot; src=&quot;assets/iScaleBar.js&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/iScaleBar.css&quot;&gt;
+</pre>
 詳見: http://api.map.com.tw/
 
 Step 0-2:
