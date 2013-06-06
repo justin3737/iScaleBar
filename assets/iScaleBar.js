@@ -19,7 +19,7 @@ var iScaleBar = function ( MapCanvas, mapObj, options){
 
 	if(type == "large"){
 
-		_object  +=	'<div id="iScalebar">';
+	_object  +=	'<div id="iScalebar">';
         _object  +=  	'<div class="zoomInBtn"></div>';
         _object  +=  	'<div class="zoomOutBtn"></div>';
         _object  +=  	'<div class="scaleBar"></div>';
@@ -82,8 +82,8 @@ var iScaleBar = function ( MapCanvas, mapObj, options){
     	};
 
     	var val = getZoomVal();
-      val = (val < _data.mapZoomMin) ? _data.mapZoomMin : val;
-      val = (val > _data.mapZoomMax) ? _data.mapZoomMax : val;
+      	val = (val < _data.mapZoomMin) ? _data.mapZoomMin : val;
+      	val = (val > _data.mapZoomMax) ? _data.mapZoomMax : val;
     	setScalebarPos(val);
     };
 
