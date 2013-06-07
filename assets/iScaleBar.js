@@ -1,5 +1,5 @@
 /** 
- * Version: 1.0.1 (2013/06/06)
+ * Version: 1.0.2 (2013/06/07)
  */
 var iScaleBar = function ( MapCanvas, mapObj, options){ 
 	var bgStyle = { "background" : 'url(' + options.imgUrl + ') no-repeat'};
@@ -7,12 +7,12 @@ var iScaleBar = function ( MapCanvas, mapObj, options){
 	var _object  = "";
 	var _elm = {};
 	var _data ={ 
-    mapCanvas : MapCanvas,
+    	mapCanvas : MapCanvas,
 		mapScaleVal : -1 ,
-		mapZoomMax : ( options.zoom_gap_max ) ? options.zoom_gap_max : 12,
-		mapZoomMin : ( options.zoom_gap_min ) ? options.zoom_gap_min : 1,
-		useMouseWheel: ( options.useMouseWheel ) ? options.useMouseWheel : true,
-		mouseWheelPluginUrl : ( options.mouseWheelPluginUrl ) ? options.mouseWheelPluginUrl : "http://hfcdn.housefun.com.tw/iScaleBar/jquery.mousewheel.js"
+		mapZoomMax : ( options.zoom_gap_max !== undefined ) ? options.zoom_gap_max : 12,
+		mapZoomMin : ( options.zoom_gap_min !== undefined ) ? options.zoom_gap_min : 1,
+		useMouseWheel: ( options.useMouseWheel !== undefined ) ? options.useMouseWheel : true,
+		mouseWheelPluginUrl : ( options.mouseWheelPluginUrl !== undefined ) ? options.mouseWheelPluginUrl : "http://hfcdn.housefun.com.tw/iScaleBar/jquery.mousewheel.js"
 	};
 
 	var map = mapObj;
@@ -32,8 +32,8 @@ var iScaleBar = function ( MapCanvas, mapObj, options){
        		iScalebar : $("#iScalebar"),
        		zoomInBtn : $('.zoomInBtn'),
        		zoomOutBtn : $('.zoomOutBtn'),
-			scaleBar : $('.scaleBar')
-		};
+		      scaleBar : $('.scaleBar')
+		    };
 
 		_elm.scaleBar.css('background-position',"0 -195px");
        	var scaleTop = parseInt(_elm.zoomInBtn.css("height"));  
@@ -82,8 +82,8 @@ var iScaleBar = function ( MapCanvas, mapObj, options){
     	};
 
     	var val = getZoomVal();
-      	val = (val < _data.mapZoomMin) ? _data.mapZoomMin : val;
-      	val = (val > _data.mapZoomMax) ? _data.mapZoomMax : val;
+      val = (val < _data.mapZoomMin) ? _data.mapZoomMin : val;
+      val = (val > _data.mapZoomMax) ? _data.mapZoomMax : val;
     	setScalebarPos(val);
     };
 
