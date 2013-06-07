@@ -12,7 +12,7 @@ var iScaleBar = function ( MapCanvas, mapObj, options){
 		mapZoomMax : ( options.zoom_gap_max !== undefined ) ? options.zoom_gap_max : 12,
 		mapZoomMin : ( options.zoom_gap_min !== undefined ) ? options.zoom_gap_min : 1,
 		useMouseWheel: ( options.useMouseWheel !== undefined ) ? options.useMouseWheel : true,
-		mouseWheelPluginUrl : ( options.mouseWheelPluginUrl !== undefined ) ? options.mouseWheelPluginUrl : "http://hfcdn.housefun.com.tw/iScaleBar/jquery.mousewheel.js"
+		mouseWheelPluginUrl : ( options.mouseWheelPluginUrl !== undefined ) ? options.mouseWheelPluginUrl : "assets/jquery.mousewheel.js"
 	};
 
 	var map = mapObj;
