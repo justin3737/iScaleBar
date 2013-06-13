@@ -4,10 +4,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Map Scalbar Demo</title>
 	<link rel="stylesheet" href="assets/iScaleBar.css">
-	<script type = "text/javascript" src='http://code.jquery.com/jquery-1.3.min.js'></script>
+	<script type = "text/javascript" src='http://code.jquery.com/jquery-1.6.min.js'></script>
 	<script type = "text/javascript" src="assets/iScaleBar.js"></script>
 	<!-- use Trend-go map's API, api and kep need to apply at "http://api.map.com.tw"-->
-	<script type="text/javascript" src="http://api.map.com.tw/js/getAPI.asp?v=1&key=your_key_here"></script>
+	<script type="text/javascript" src="http://api.map.com.tw/js/getAPI.asp?v=1&key=DFCE9CCD255DB124825E75C2EFEAB9C10E513C09"></script>
 	<script>
 		$(function(){
 			var map;
@@ -18,9 +18,10 @@
 			//remove the defalult map scale controller of Trend-go map. 
 			//map.addControl ('LargeScaleBar'); 
 
-			//iScaleBar options
+			//iScaleBar options * not required
 			var options = {
-				imgUrl: 	"assets/iScalebar.png",	//*reguired
+				mapcanvas: 	"map_canvas",
+				imgUrl: 	"assets/iScalebar.png",	
 				type: 		"large",			
 				useMouseWheel: true, 
 				mouseWheelPluginUrl:"assets/jquery.mousewheel.js",
@@ -28,7 +29,7 @@
 				zoom_gap_max: 12
 			};
 			//init constructor.
-			new iScaleBar( "map_canvas", map, options);
+			new iScaleBar( map ,options);
 
 		});
 	</script>
