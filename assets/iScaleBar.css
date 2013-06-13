@@ -23,6 +23,10 @@
 #iScalebar .zoomOutBtn.small {
   top: 26px;
 }
+#iScalebar .scale_parent {
+  width: 31px;
+  height: 130px;
+}
 #iScalebar .scaleBar {
   top: 33px;
   height: 11px;
