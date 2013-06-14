@@ -39,8 +39,8 @@ Options:
   - "small" 僅有 "+","-"按鈕．預設值為 "large"
 - <code>useMouseWheel</code> 是否使用滑鼠滾輪
 - <code>useDarggable</code> 是否使用拖曳功能(jquery ui draggable)
-- <code>mouseWheelPluginUrl</code> 滑鼠滾輪plugin 所在位置 (default:http://hfcdn.housefun.com.tw/iScaleBar/jquery.mousewheel.js)
-- <code>draggablePluginUrl</code> 拖曳功能plugin 所在位置 (default:http://hfcdn.housefun.com.tw/iScaleBar/jquery-ui-draggable.min.js)
+- <code>mouseWheelPluginUrl</code> 滑鼠滾輪plugin 所在位置 (default: assets/jquery.mousewheel.js)
+- <code>draggablePluginUrl</code> 拖曳功能plugin 所在位置 (default: assets/jquery-ui-draggable.min.js)
 - <code>zoom_gap_min</code> 地圖放大最小值預設為1
 - <code>zoom_gap_max</code> 地圖放大最大值預設為12
 
