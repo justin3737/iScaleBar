@@ -13,8 +13,8 @@ var iScaleBar = function (mapObj, options) {
         mapZoomMax: _options.zoom_gap_max || 12,
         mapZoomMin: _options.zoom_gap_min || 1,
         imgUrl: _options.imgUrl || "assets/iScalebar.png",
-        useMouseWheel: _options.useMousewheel || true,
-        useDarggable: _options.useDarggable || true,
+        useMouseWheel: (typeof _options.useMouseWheel != 'undefined') ? options.useMouseWheel : true,
+        useDarggable: (typeof _options.useDarggable != 'undefined') ? options.useDarggable : true,
         mouseWheelPluginUrl: _options.mouseWheelPluginUrl || "assets/jquery.mousewheel.js",
         draggablePluginUrl: _options.draggablePluginUrl || "assets/jquery-ui-draggable.min.js",
         dargGrid: _options.dargGrid || 11
