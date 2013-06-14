@@ -1,6 +1,6 @@
 /** 
  * Create: (2013/06/05)
- * Version: 1.0.3 (2013/06/13)
+ * Version: 1.0.4 (2013/06/14)
  */
 var iScaleBar = function (mapObj, options) {
     var _options = (typeof options != 'undefined' && options.constructor === Object) ? options : {};
@@ -13,7 +13,7 @@ var iScaleBar = function (mapObj, options) {
         mapZoomMax: _options.zoom_gap_max || 12,
         mapZoomMin: _options.zoom_gap_min || 1,
         imgUrl: _options.imgUrl || "assets/iScalebar.png",
-        useMouseWheel: _options.usemousewheel || true,
+        useMouseWheel: _options.useMousewheel || true,
         useDarggable: _options.useDarggable || true,
         mouseWheelPluginUrl: _options.mouseWheelPluginUrl || "assets/jquery.mousewheel.js",
         draggablePluginUrl: _options.draggablePluginUrl || "assets/jquery-ui-draggable.min.js",
@@ -113,8 +113,6 @@ var iScaleBar = function (mapObj, options) {
         });
     };
 
-    // ��霈�� CSS/JS File.
-
     function loadjscssfile(filename, filetype, callback) {
         //if filename is a external JavaScript file
         if (filetype === "js") {
@@ -197,7 +195,7 @@ var iScaleBar = function (mapObj, options) {
     //------  addEventListener  ---------------------
     if (_data.type == "large") {
         _elm.iScalebar.bind('click', function (evt) {
-            scaleControl(evt.pageY - scaleTop);
+            scaleControl(evt.pageY - _elm.iScalebar.offset().top -11);
         });
 
         _elm.iScalebar.mousedown(function (evt) {
@@ -208,10 +206,14 @@ var iScaleBar = function (mapObj, options) {
     _elm.zoomInBtn.bind('click', function (evt) {
         evt.stopPropagation();
         scaleControl("in");
+    }).bind('mousedown',function(evt){
+        evt.stopPropagation();     
     });
 
     _elm.zoomOutBtn.bind('click', function (evt) {
         evt.stopPropagation();
         scaleControl("out");
+    }).bind('mousedown',function(evt){
+        evt.stopPropagation();     
     });
 };
