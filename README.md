@@ -7,108 +7,88 @@ iScaleBar
 How to Use : 
 --------------
 需要引入以下檔案:
-- jQuery Lib (最低版本 1.3 以上)
+- jQuery Lib (最低版本 1.6 以上)
 - iScaleBar.js 
 - iScaleBar.css
-- iScaleBar.png
-- mousewheel.js (*not required)
 
-Step 0-1:
---------------
-在<code>head</code>中引入達康地圖API & KEY 
-<pre>
-&lt;script type=&quot;text/javascript&quot; src=&quot;http://api.map.com.tw/js/getAPI.asp?v=1&amp;key=your_key_here&quot;&gt;&lt;/script&gt;
-</pre>
-引入js.css
-<pre>
-&lt;script type = &quot;text/javascript&quot; src='http://code.jquery.com/jquery-1.7.2.min.js'&gt;&lt;/script&gt;
-&lt;script type = &quot;text/javascript&quot; src=&quot;assets/iScaleBar.js&quot;&gt;&lt;/script&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/iScaleBar.css&quot;&gt;
-</pre>
-詳見: http://api.map.com.tw/
 
-Step 0-2:
+Init:
 --------------
+初始化建構式
 <pre>
-var map;
-//定義Map初始位置
-map = new iMap (document.getElementById ("map_canvas")); 
-map.centerMap (new Point (121.52,25.035) ,7 );
-			
-//註解(移除)原有的達康地圖控制項
+new iScaleBar( map ,options);
+</pre>
+- <code>map</code> 需要傳入map 參考物件
+- <code>options</code> 初始化選項 (*not required)
+
+
+Note:
+--------------
+註解(移除)原有的達康地圖控制項
+<pre>
 //map.addControl ('LargeScaleBar');
 </pre>
 
 
-Step 1:
+Options:
 --------------
-宣告<code>options</code>的物件，裡面是地圖控制項自訂項目:
-僅有<code>imgUrl</code> 為必要項目
-<pre>
-var options = {
-		imgUrl: 	"assets/iScalebar.png",	//*reguired
-		type: 		"large",			
-		useMouseWheel: true, 
-		mouseWheelPluginUrl:"assets/jquery.mousewheel.js",
-		zoom_gap_min: 9,
-		zoom_gap_max: 12
-	};
-</pre>
-<br>
-- <code>imgUrl</code> 控制項底圖圖片位置
+*初始化時可不用傳入
+- <code>mapcanvas</code> 預設值為"map_canvas"
 - <code>type</code> 
   - "large" 包含刻度尺
   - "small" 僅有 "+","-"按鈕．預設值為 "large"
 - <code>useMouseWheel</code> 是否使用滑鼠滾輪
-- <code>mouseWheelPluginUrl</code> 滑鼠滾輪plugin 所在位置
-- <code>zoom_gap_max</code> 地圖放大最大值預設為12
+- <code>useDarggable</code> 是否使用拖曳功能(jquery ui draggable)
+- <code>mouseWheelPluginUrl</code> 滑鼠滾輪plugin 所在位置 (default:http://hfcdn.housefun.com.tw/iScaleBar/jquery.mousewheel.js)
+- <code>draggablePluginUrl</code> 拖曳功能plugin 所在位置 (default:http://hfcdn.housefun.com.tw/iScaleBar/jquery-ui-draggable.min.js)
 - <code>zoom_gap_min</code> 地圖放大最小值預設為1
+- <code>zoom_gap_max</code> 地圖放大最大值預設為12
 
-Step 2:
+Example:
 --------------
-初始化建構式
+- example 1.<br>直接使用iScalbar
 <pre>
-new iScaleBar( "map_canvas", map, options);
+new  iScaleBar( map );
 </pre>
-- <code>"map_canvas"</code> 顯示達康地圖div id
-- <code>map</code> 需要傳入map 參考物件
-- <code>options</code> 初始化選項
+<br>
+- example 2.<br>設定zoom gap 介於9~12
+<pre>
+new  iScaleBar( map , { zoom_gap_min : 9, zoom_gap_max : 12 } );
+</pre>
+<br>
+- example 3.<br>使用小的scalebar (僅有 + - 的按鈕)
+<pre>
+new  iScaleBar( map , { type : ”small” } );
+</pre>
+<br>
+- example 4.<br>不使用滑鼠滾輪,拖曳功能
+<pre>
+new  iScaleBar( map , { useDarggable : false , useMouseWheel : false } );
+</pre>
+<br>
 
-Step 3:
+Demo:
 --------------
-結果如下:<br>
-done and Enjoy it !
 <pre>
 &lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
 	&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
-	&lt;title&gt;Demo&lt;/title&gt;
+	&lt;title&gt;Map Scalbar Demo&lt;/title&gt;
 	&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/iScaleBar.css&quot;&gt;
-	&lt;script type = &quot;text/javascript&quot; src='http://code.jquery.com/jquery-1.7.2.min.js'&gt;&lt;/script&gt;
+	&lt;script type = &quot;text/javascript&quot; src=&#39;http://code.jquery.com/jquery-1.6.min.js&#39;&gt;&lt;/script&gt;
 	&lt;script type = &quot;text/javascript&quot; src=&quot;assets/iScaleBar.js&quot;&gt;&lt;/script&gt;
-	&lt;!-- use map api &amp; key --&gt;
-	&lt;script type=&quot;text/javascript&quot; src=&quot;http://api.map.com.tw/js/getAPI.asp?v=1&amp;key=your_key_here&quot;&gt;&lt;/script&gt;
+	&lt;!-- use Trend-go map&#39;s API, api and kep need to apply at &quot;http://api.map.com.tw&quot;--&gt;
+	&lt;script type=&quot;text/javascript&quot; src=&quot;http://api.map.com.tw/js/getAPI.asp?v=1&amp;key=your_api_key&quot;&gt;&lt;/script&gt;
 	&lt;script&gt;
 		$(function(){
 			var map;
+      		//define map
       		map = new iMap (document.getElementById (&quot;map_canvas&quot;)); 
-		map.centerMap (new Point (121.52,25.035) ,7 );  
-			
-			//remove defaule scale controller
-			//map.addControl ('LargeScaleBar'); 
+　　		map.centerMap (new Point (121.52,25.035) ,7 );   //init location 
 
-			//iScaleBar options
-			var options = {
-				imgUrl: 	&quot;assets/iScalebar.png&quot;,	//*reguired
-				type: 		&quot;large&quot;,			
-				useMouseWheel: true, 
-				mouseWheelPluginUrl:&quot;assets/jquery.mousewheel.js&quot;,
-				zoom_gap_min: 9,
-				zoom_gap_max: 12
-			};
-
-			new iScaleBar( &quot;map_canvas&quot;, map, options);
+			//init constructor.
+			new iScaleBar( map );
 
 		});
 	&lt;/script&gt;
