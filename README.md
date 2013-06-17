@@ -99,3 +99,18 @@ Demo:
 &lt;/body&gt;
 &lt;/html&gt;
 </pre>
+
+License
+--------------
+this software is released under <a href="http://www.wtfpl.net/" target="_blank">WTFPL</a>
+<pre>
+ Copyright (C) 2013 Justin Wu <juns3700@gmail.com>
+
+ This work is free. You can redistribute it and/or modify it under the
+ terms of the Do What The Fuck You Want To Public License, Version 2,
+ as published by Sam Hocevar. See below for more details.
+
+
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+                    Version 2, December 2004
+</pre>
